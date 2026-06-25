@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html lang="en" class="__variable_1fdbab __variable_f415a3 rqlynbmznu idc0_350">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State of the Art[ist]</title>
+<meta name="description" content="A guild of concerned citizens protecting the lightcone from bad art and aesthetic degradation">
+<!-- 1 — Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://stateoftheartist.ai/">
+<meta property="og:title"       content="State of the Art[ist]">
+<meta property="og:description" content="June 3-14 | SOTA III | Protecting the light cone from bad art">
+<meta property="og:image"       content="https://stateoftheartist.ai/sotapreviewthumb.jpg"> <!-- absolute HTTPS, ≥400×400, <5 MB -->
+
+<!-- 2 — Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="State of the Art[ist]">
+<meta name="twitter:description" content="June 3-14 | SOTA III | Protecting the light cone from bad art">
+<meta name="twitter:image"       content="https://stateoftheartist.ai/sotapreviewthumb.jpg">
+
+<link rel="icon" href="faviconV2.png" type="image/png">
+<!-- <link rel="icon" href="Physical%20Intelligence%20(%CF%80)_files/icon.png" type="image/png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="Physical%20Intelligence%20(%CF%80)_files/icon-dark.png" type="image/png" media="(prefers-color-scheme: dark)"> -->
+<!-- Swiper CSS REMOVED -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+<!-- PhotoSwipe CSS REMOVED -->
+<!-- <link rel="stylesheet" href="./photoswipe.css"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.3/photoswipe.min.css" integrity="sha512-LFWtdAXHQuwUGHPyZaqGtrkJInSpm/zLbsOeuTI+kuN9PaEMiXrjGKnIbtdIIrTzBZC9MYWT3mcBYHXF7WqIag==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+<!-- lightGallery CSS (assuming it's in the same directory) -->
+<link rel="stylesheet" href="lightgallery.min.css" />
+
+<link rel="stylesheet" href="Physical%20Intelligence%20(%CF%80)_files/732da43204617521.css" data-precedence="next">
+<link rel="stylesheet" href="Physical%20Intelligence%20(%CF%80)_files/306cb6160777bb44.css" data-precedence="next">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    height: 100%; /* Ensure body takes full viewport height */
+    overflow-y: auto; /* Allow vertical scroll ONLY if needed */
+  }
+  /* Add padding-top when banner is shown */
+  body.has-banner {
+    padding-top: 42px; /* Adjust based on banner height */
+  }
+  footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    perspective: 1500px; /* Needed for 3D page turn effect */
+    background-image: url('x11image.png'); /* Corrected path - relative to HTML */
+    background-repeat: repeat;
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    background-size: auto; /* Use original image size for tiling */
+  }
+  .collapsible {
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .collapsible::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-in-out; /* Smoother transition */
+    font-weight: 300; /* Lighter plus/minus */
+  }
+  .collapsible.active::before {
+    content: "–";
+    transform: rotate(180deg); /* Add rotation */
+  }
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out; /* Slightly slower expansion */
+    padding-left: 1.5rem;
+  }
+  .content.active {
+    max-height: 5000px;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    margin: 0.5rem 0;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Added transitions */
+  }
+  .cta-button:hover {
+    background-color: black; /* Keep background */
+    color: white; /* Keep color */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  .cta-button-outline {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease; /* Added transitions */
+  }
+  .cta-button-outline:hover {
+    background-color: white; /* Keep background */
+    color: black; /* Keep color */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  }
+  .tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin: 0.25rem;
+    background-color: #f3f3f3;
+    font-size: 0.875rem;
+    border-radius: 2px;
+  }
+  .toggle-section {
+    margin-bottom: 1rem;
+  }
+  .toggle-section h3 {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  .toggle-section h3::before {
+    content: "+";
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  .toggle-section.active h3::before {
+    content: "–";
+  }
+  .toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .toggle-section.active .toggle-content {
+    max-height: 1000px;
+  }
+  .border-card {
+    border: 1px solid #EAEAEA; /* Lighter initial border */
+    padding: 1rem;
+    transition: all 0.3s ease-out; /* Smoother transition */
+    transform: translateY(0); /* Initial state */
+  }
+  .border-card:hover {
+    border-color: #C0BDAD;
+    box-shadow: 3px 5px 10px rgba(192, 189, 173, 0.2); /* Softer, slightly larger shadow */
+    background-color: white;
+    transform: translateY(-3px); /* Slightly more lift */
+  }
+  .dark-card {
+    border: 1px solid black;
+    padding: 1rem;
+    box-shadow: 3px 3px 0px #000;
+    transition: all 0.3s ease-out; /* Smoother transition */
+    transform: translateY(0); /* Initial state */
+  }
+  .dark-card:hover {
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15); /* Softer, deeper shadow */
+    transform: translateY(-3px); /* Slightly more lift */
+  }
+
+  /* Manifesto Overlay Styles */
+  #manifesto-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdfdfd; /* Slightly off-white background */
+    z-index: 1000;
+    padding: 4rem 2rem 2rem;
+    overflow-y: auto;
+    transform: rotateY(-90deg);
+    transform-origin: left center;
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease-out; /* Adjusted timing, added opacity transition */
+    visibility: hidden;
+    opacity: 0;
+    color: black;
+  }
+
+  #manifesto-overlay.visible {
+    transform: rotateY(0deg);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #manifesto-content {
+     max-width: 36rem;
+     margin-left: 0;
+     margin-right: auto;
+     padding-left: 1rem;
+     padding-right: 1rem;
+     /* Increased line-height for readability - applied to container */
+     line-height: 1.7;
+  }
+
+  /* Adjust line-height specifically within manifesto paragraphs */
+  #manifesto-text-container p {
+      line-height: 1.6; /* Slightly tighter than container for paragraph flow */
+      /* display: inline; /* Allow border to wrap tight with text - Keep this for cursor */
+      /* Removed display:inline as it breaks block margins like mb-4. Will handle cursor differently if needed. */
+  }
+
+  /* Manifesto Typewriter Cursor */
+  #manifesto-text-container p .typing-cursor-span {
+    /* Wrap the last typed character in a span to attach the cursor */
+    display: inline-block; /* Needed to attach border correctly */
+    border-right: 2px solid black;
+    animation: blink 0.75s step-end infinite;
+    /* Add a tiny negative margin to keep cursor tight */
+    margin-right: -2px;
+    padding-right: 2px; /* Compensate margin visually */
+    line-height: inherit; /* Ensure span inherits p line height */
+  }
+
+  #close-manifesto {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 300;
+    color: #555;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+  }
+  #close-manifesto:hover {
+      color: #000;
+  }
+
+  /* Refined Header Link Hover */
+  header .header-links a {
+    position: relative;
+    /* text-decoration: underline; */
+    transition: color 0.2s ease, border-bottom-width 0.2s ease;
+    visibility: hidden; /* Start hidden */
+    color: #555;
+    direction: ltr; /* Ensure Left-to-Right */
+    text-align: left; /* Ensure Left Alignment */
+  }
+  header .header-links a:hover {
+      color: #000; /* Darker hover color */
+  }
+
+  /* Typewriter Effect Styles */
+  #main-title {
+    display: inline-block; /* Ensures width is based on content */
+    overflow: hidden; /* Hide text until typed */
+    white-space: nowrap; /* Keep text on one line */
+    border-right: 2px solid black; /* Initial cursor */
+    width: 0; /* Start with no width */
+    /* Animation will be controlled by JS */
+  }
+
+  #main-title.typing-done {
+      border-right-color: transparent; /* Hide cursor when done */
+      /* Optional: Add a slight delay before hiding cursor */
+      /* transition: border-right-color 0.5s step-end; */
+  }
+
+  /* Blinking Cursor (can be added via JS or kept simple) */
+  @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+  }
+  #main-title.typing,
+  header .header-links a.typing,
+  .typing-cursor-span {
+      animation: blink 0.75s step-end infinite;
+      border-right: 2px solid black; /* Ensure border is applied for blink */
+  }
+
+  /* Participation Checklist Styles */
+  #participation-checklist {
+    width: 100%; /* Take full width of its new parent */
+    padding: 1rem 1.25rem;
+    background-color: rgba(253, 253, 253, 0.9);
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    z-index: 50;
+    line-height: 1.4;
+    margin-bottom: 1rem; /* Consistent with checklist */
+  }
+
+  #participation-checklist ul {
+      list-style: none;
+      padding-left: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+  }
+
+  #participation-checklist li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      font-size: 0.875rem;
+      line-height: 1.4;
+      /* Removed white-space, overflow, text-overflow to allow wrapping */
+      /* white-space: nowrap; */
+      /* overflow: hidden; */
+      /* text-overflow: ellipsis; */
+  }
+
+  /* Remove cursor pointer from divider */
+  #participation-checklist li.checklist-divider {
+      cursor: default;
+  }
+
+  /* Marker (Square Outline) */
+  #participation-checklist li::before,
+  #participation-checklist-mobile li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px; /* Adjusted slightly for wrapped text alignment */
+      width: 12px;
+      height: 12px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: background-color 0.2s ease, border-color 0.2s ease; /* Added background transition back */
+  }
+
+  /* Fill box black on check */
+  #participation-checklist li.checked::before,
+  #participation-checklist-mobile li.checked::before {
+      background-color: #000; /* Fill black */
+      border-color: #000; /* Black border */
+  }
+
+  /* Style for Checked Text */
+  #participation-checklist li.checked {
+      color: #888; /* Muted text color */
+  }
+
+  /* Link Styling - ensure checked state text color is handled */
+  #participation-checklist li a.checklist-link,
+  #participation-checklist-mobile li a.checklist-link {
+      /* text-decoration: underline; /* REMOVED default underline */
+      transition: color 0.2s ease;
+  }
+  /* Unchecked link color */
+  #participation-checklist li:not(.checked) a.checklist-link,
+  #participation-checklist-mobile li:not(.checked) a.checklist-link {
+       color: #000; /* Explicit black */
+  }
+  /* Checked link color */
+  #participation-checklist li.checked a.checklist-link,
+  #participation-checklist-mobile li.checked a.checklist-link {
+       color: #888; /* Muted color */
+  }
+  /* Hover adds underline and darkens */
+  #participation-checklist li a.checklist-link:hover,
+  #participation-checklist-mobile li a.checklist-link:hover {
+       text-decoration: underline; /* Underline ONLY on hover */
+      color: #333; /* Slightly darken on hover regardless of state */
+  }
+
+  /* Divider Styling */
+  #participation-checklist li.checklist-divider,
+  #participation-checklist-mobile li.checklist-divider {
+      margin-top: 1.2rem; /* More space above */
+      margin-bottom: 1.2rem; /* More space below */
+      padding-left: 0; /* No marker space needed */
+      color: #888; /* Changed from #aaa */
+      font-style: italic; /* Optional: italicize */
+      text-align: center; /* Center the divider text */
+      font-size: 0.8rem; /* Changed from 0.7rem */
+      cursor: default;
+  }
+
+  /* Hide marker for the divider */
+  #participation-checklist li.checklist-divider::before,
+  #participation-checklist-mobile li.checklist-divider::before {
+      display: none;
+  }
+
+  /* Mobile Checklist Styles (within main content) */
+  #participation-checklist-mobile {
+      display: none;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem 1.25rem; /* Restore padding */
+      background-color: rgba(253, 253, 253, 0.9); /* Subtle background */
+      border: 1px solid #eaeaea; /* Light border */
+      border-radius: 3px; /* Subtle rounding */
+  }
+  #participation-checklist-mobile ul {
+      list-style: none;
+      padding-left: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+  }
+  #participation-checklist-mobile li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      font-size: 0.875rem;
+      line-height: 1.4;
+      /* Removed white-space, overflow, text-overflow to allow wrapping */
+      /* white-space: nowrap; */
+      /* overflow: hidden; */
+      /* text-overflow: ellipsis; */
+  }
+  #participation-checklist-mobile li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px; /* Positioning adjusted globally above */
+      width: 12px;
+      height: 12px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      background-color: transparent;
+      transition: border-color 0.2s ease;
+  }
+  /* UPDATED: Fill box black on check for mobile */
+  #participation-checklist-mobile li.checked::before {
+      background-color: #000; /* Fill black */
+      border-color: #000; /* Black border */
+  }
+  /* REMOVED: No checkmark needed */
+  /* #participation-checklist-mobile li.checked::after { ... } */
+
+  #participation-checklist-mobile li.checked {
+      color: #888;
+  }
+  #participation-checklist-mobile li.checklist-divider {
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+      padding-left: 0;
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      font-size: 0.7rem;
+  }
+  #participation-checklist-mobile li.checklist-divider::before {
+      display: none;
+  }
+
+  /* Media Query to switch between checklists */
+  @media (max-width: 1024px) {
+    #participation-checklist {
+        display: none; /* Hide fixed checklist */
+    }
+    #participation-checklist-mobile {
+        display: block; /* Show in-flow checklist */
+    }
+  }
+
+  /* Remove styles for sub-items as they are no longer nested */
+  /*
+  #participation-checklist li.sub-item,
+  #participation-checklist-mobile li.sub-item {
+      padding-left: 2.5rem;
+      font-size: 0.65rem;
+      color: #666;
+  }
+
+  #participation-checklist li.sub-item::before,
+  #participation-checklist-mobile li.sub-item::before {
+      width: 8px;
+      height: 8px;
+      left: 1.5rem;
+  }
+  */
+
+  /* Conditional Step Styling */
+  #participation-checklist li.is-conditional-step,
+  #participation-checklist-mobile li.is-conditional-step {
+      cursor: default; /* Indicate non-clickable */
+      color: #555; /* Slightly different color */
+      font-style: italic;
+      margin-top: 1rem; /* Add space above */
+      margin-bottom: 1rem; /* Add space below */
+      padding-left: 0.5rem; /* Adjust padding as no checkbox */
+      position: relative; /* Needed for pseudo-elements */
+  }
+
+  /* Hide the default checkbox for conditional step */
+  #participation-checklist li.is-conditional-step::before,
+  #participation-checklist-mobile li.is-conditional-step::before {
+      display: none;
+  }
+
+  /* Add arrows for conditional step */
+  #participation-checklist li.is-conditional-step::before,
+  #participation-checklist-mobile li.is-conditional-step::before {
+      /* Using ::before for the top arrow */
+      display: block; /* Make it display block to position */
+      content: '▲';
+      position: absolute;
+      left: 0.5rem; /* Align with text */
+      top: -0.7rem; /* Position above the text */
+      font-size: 0.5rem;
+      color: #999;
+  }
+
+  #participation-checklist li.is-conditional-step::after,
+  #participation-checklist-mobile li.is-conditional-step::after {
+      /* Using ::after for the bottom arrow */
+      content: '▼';
+      position: absolute;
+      left: 0.5rem; /* Align with text */
+      bottom: -0.7rem; /* Position below the text */
+      font-size: 0.5rem;
+      color: #999;
+  }
+
+  /* Checklist Title Styling */
+  #participation-checklist h4,
+  #participation-checklist-mobile h4 {
+      font-weight: 600; /* Semi-bold */
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem; /* Adjust size */
+      color: #333; /* Darker color for title */
+  }
+
+  /* Tooltip Styles */
+  .tooltip-trigger {
+    position: relative;
+    cursor: help; /* Indicate interactivity */
+    border-bottom: 1px dotted #777; /* Subtle indicator */
+  }
+
+  .tooltip-content {
+    position: absolute;
+    bottom: 125%; /* Position above the text */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip */
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    width: max-content; /* Adjust width to content */
+    max-width: 250px; /* Max width to prevent overflow */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10; /* Ensure it's above other elements */
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif; /* Use a standard sans-serif for readability */
+  }
+
+  /* Style for the tooltip title */
+  .tooltip-title {
+      text-align: right;
+      font-weight: 500; /* Slightly bolder title */
+      margin-bottom: 0.3rem; /* Space between title and definition */
+      display: block; /* Ensure it takes full width for alignment */
+  }
+
+  .tooltip-trigger:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Tooltip Arrow (optional but nice) */
+  .tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Position at the bottom of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent; /* Arrow pointing down */
+  }
+
+  /* UPDATED PhotoSwipe -> lightGallery Style Target */
+  #lightgallery {
+      display: grid;
+      /* Grid columns handled by Tailwind classes on the element */
+      /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+      gap: 8px; /* Adjust gap as needed */
+  }
+
+  #lightgallery a {
+      display: block;
+      overflow: hidden; /* Prevents content spill */
+      border-radius: 3px; /* Optional rounding */
+      border: 1px solid #eee; /* Subtle border */
+  }
+
+  /* UPDATED Selector */
+  #lightgallery img {
+      display: block;
+      width: 100%;
+      height: 100px; /* Fixed height for thumbnails - Adjust if needed */
+      object-fit: cover;
+      transition: transform 0.2s ease-out;
+      /* Changed 3px to 4px for a larger pixelated corner */
+      clip-path: polygon(4px 0, calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px), 0 4px, 4px 4px );
+  }
+
+  #lightgallery a:hover img {
+      transform: scale(1.05); /* Slight zoom on hover */
+  }
+
+  /* Make element visible when typewriter starts */
+  .typewriter-active {
+      visibility: visible !important; /* Use !important to ensure override if needed */
+  }
+
+  /* Adjust lightGallery slide centering & remove padding */
+  .lg-slide {
+      display: flex; /* Keep flex display */
+      align-items: flex-start; /* Align content (image) to the TOP */
+      justify-content: center; /* Keep horizontal centering */
+      /* REMOVED height: 100svh; */
+      /* REMOVED padding-top: 3rem; */
+      /* REMOVED padding-bottom: 3rem; */
+  }
+
+  /* Ensure inner container also attempts to fill height - REMOVED this rule */
+  /* .lg-inner { height: 100svh; } */
+
+  /* Constrain the image size within the slide for symmetrical spacing */
+  .lg-image {
+      max-width: calc(100vw - 6rem); /* Leave 3rem equivalent space left/right */
+      max-height: calc(100svh - 6rem); /* ADDED BACK: Set max height based on smallest viewport height */
+      object-fit: contain; /* Maintain aspect ratio */
+      margin: auto; /* ADDED BACK: Ensure centered within flex container */
+  }
+
+  /* --- Custom Arrow Styles --- */
+  .lg-prev, .lg-next {
+    background-color: rgba(0, 0, 0, 0.2); /* Faint background */
+    border-radius: 50%; /* Make them circular */
+    padding: 10px; /* Increase clickable area */
+    transition: background-color 0.2s ease;
+    /* Adjust position */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .lg-prev {
+    left: 20px; /* Move away from left edge */
+  }
+  .lg-next {
+    right: 20px; /* Move away from right edge */
+  }
+  .lg-prev:hover, .lg-next:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker on hover */
+  }
+  .lg-prev::before, .lg-next::before {
+    font-family: sans-serif; /* Use standard font */
+    font-size: 28px; /* Larger arrow character */
+    line-height: 1;
+    color: white;
+    display: block; /* Ensure proper sizing */
+    padding: 0 5px; /* Fine-tune character position */
+  }
+  /* Override default icon font content */
+  .lg-prev::before {
+      content: '<';
+  }
+  .lg-next::before {
+      content: '>';
+  }
+  /* --- End Custom Arrow Styles --- */
+
+  /* Limit Tally embed height to avoid excessive bottom space */
+  .tally-iframe-wrapper {
+      max-height: 130px; /* Further reduced height */
+      overflow-y: auto;
+  }
+  .tally-iframe-wrapper iframe {
+     height: 130px !important; /* Further reduced height */
+  }
+
+  /* Remove default margins from footer paragraphs */
+  footer p {
+    margin-bottom: 0;
+  }
+  /* Additional style to reduce space between the two lines */
+  footer .flex.items-end {
+     margin-top: -0.25rem; /* Adjust negative margin as needed */
+  }
+
+  /* Disable text selection globally */
+  body, html {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+
+  /* Style for non-interactive checklist items */
+  #participation-checklist li.non-interactive,
+  #participation-checklist-mobile li.non-interactive {
+      cursor: default; /* Remove pointer cursor */
+      text-decoration: none !important; /* Ensure no underline */
+      /* Optional: Add other styles if needed to visually distinguish */
+  }
+
+  /* --- Add @font-face rule --- */
+  @font-face {
+    font-family: 'PPLettraMonoBold';
+    src: url('PPLettraMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* --- Class to apply the custom font --- */
+  .font-lettramono {
+      font-family: 'PPLettraMonoBold', monospace;
+      font-weight: normal; /* Set font-weight to normal */
+      letter-spacing: -0.05em; /* Make letters slightly closer */
+  }
+
+  /* --- Style for the link within the custom font span --- */
+  .font-lettramono a {
+      color: inherit; /* Inherit black color from parent */
+      text-decoration: none; /* Remove default underline */
+  }
+  .font-lettramono a:hover {
+      text-decoration: underline; /* Optional: Add underline on hover */
+  }
+
+  /* --- Style for non-interactive checklist items --- */
+  #participation-checklist li.non-interactive,
+  #participation-checklist-mobile li.non-interactive {
+      cursor: default; /* Remove pointer cursor */
+      text-decoration: none !important; /* Ensure no underline */
+      /* Optional: Add other styles if needed to visually distinguish */
+  }
+
+  /* Media Query for Mobile Modal Adjustments */
+  @media (max-width: 640px) {
+    #manifesto-overlay {
+      padding: 1rem; /* Reduced padding for a more full-page feel on mobile */
+    }
+    #close-manifesto {
+      top: 0.75rem;    /* Adjusted for new padding */
+      left: 0.75rem;
+      font-size: 1.75rem; /* Slightly smaller close button */
+    }
+    /* #manifesto-content can retain its existing padding and max-width */
+  }
+
+  /* Prevent body scrolling when modal is open */
+  body.modal-is-open {
+    overflow: hidden;
+  }
+
+  /* Header Audio Player Styles */
+  .header-audio-player-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0.25rem; /* Further reduced space */
+  }
+
+  #header-play-pause-button {
+    background: none;
+    border: none; /* No border */
+    padding: 0.25rem; /* Minimal padding */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width and height will be determined by icon size + padding */
+  }
+  #header-play-pause-button:hover svg {
+    stroke: #555; /* Darken icon slightly on hover */
+  }
+  #header-play-pause-button svg {
+    width: 18px; /* Adjust icon size for header */
+    height: 18px;
+    stroke: black; /* Icon color */
+    transition: stroke 0.2s ease;
+  }
+
+  /* Old Audio Player Styles (can be removed if not used elsewhere) */
+  .audio-player-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Space between Apply button and audio player */
+  }
+
+  #play-pause-button {
+    background: none;
+    border: 1px solid black;
+    border-radius: 50%; /* Make it circular */
+    padding: 0.5rem; /* Adjust padding to make it look good */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* Fixed width */
+    height: 40px; /* Fixed height */
+    transition: background-color 0.2s ease;
+  }
+  #play-pause-button:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  #play-pause-button svg {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+    stroke: black; /* Icon color */
+  }
+
+  /* --- Right Sidebar Container --- */
+  #right-sidebar-container {
+    position: sticky;
+    top: 100px;
+    float: right;
+    margin-right: 25px;
+    width: 360px; /* Same as original checklist */
+    z-index: 50;
+  }
+
+  /* Co-conspirators Section Styles (mimicking checklist) */
+  #co-conspirators-section {
+    margin-top: 2rem; /* Space below checklist */
+    padding: 1rem 1.25rem;
+    background-color: rgba(253, 253, 253, 0.9);
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    line-height: 1.4;
+    margin-bottom: 1rem; /* Consistent with checklist */
+  }
+  #co-conspirators-section h4 {
+    font-weight: 600;
+    margin-bottom: 0.75rem; /* Adjusted space for title */
+    font-size: 0.9rem; /* Slightly larger title */
+    color: #1a1a1a; /* Darker, more assertive title color */
+    text-transform: uppercase; /* Uppercase for a bit of style */
+    letter-spacing: 0.05em; /* Slight letter spacing */
+  }
+  #co-conspirators-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  #co-conspirators-section li {
+    margin-bottom: 0.6rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  #co-conspirators-section li a {
+    color: #000;
+    transition: color 0.2s ease;
+  }
+  #co-conspirators-section li a:hover {
+    text-decoration: underline;
+    color: #000; /* Darken on hover */
+  }
+
+  /* Individual conspirator item styling */
+  .conspirator-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between items */
+  }
+  .conspirator-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    border: 1px solid #eee; /* Softer border */
+    object-fit: cover; /* Ensure image covers, doesn't distort */
+  }
+  .conspirator-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .conspirator-name {
+    font-weight: 500; /* Medium weight for name */
+    font-size: 0.875rem; /* Base size */
+    color: #2c2c2c; /* Dark gray for name */
+    margin-bottom: 0.125rem; /* Tiny space between name and handle */
+  }
+  .conspirator-handle {
+    font-size: 0.75rem; /* Smaller for handle */
+    color: #666; /* Lighter gray for handle */
+    text-decoration: none;
+  }
+  .conspirator-handle:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+  }
+
+  /* Adjust original checklist to not float/position itself */
+  #participation-checklist {
+    /* position: sticky; REMOVED */
+    /* top: 100px; REMOVED */
+    /* float: right; REMOVED */
+    /* margin-right: 25px; REMOVED */
+    width: 100%; /* Take full width of its new parent */
+    padding: 1rem 1.25rem;
+  }
+
+  /* Mobile-specific container for Conspirators and Who sections */
+  #mobile-conspirators-who-container {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+  }
+
+  @media (max-width: 767px) { /* md breakpoint in Tailwind is 768px, so using 767px for mobile */
+    #right-sidebar-container {
+      display: none !important; /* Hide original sidebar on mobile */
+    }
+    #mobile-conspirators-who-container {
+      display: flex !important; /* Show mobile container */
+      /* The order will be handled by JavaScript appending */
+    }
+    /* Ensure the moved sections take full width if needed */
+    #mobile-conspirators-who-container > div {
+        width: 100%;
+        margin-bottom: 1rem; /* Add some space between the moved sections */
+    }
+    /* Reset any specific desktop styling for co-conspirators if it was part of right-sidebar */
+    #co-conspirators-section {
+        float: none;
+        margin-right: 0;
+        width: 100%;
+        margin-top: 0; /* Reset top margin if it was specific to desktop */
+    }
+    /* Remove bottom margin from the last item in the mobile container to avoid double spacing */
+    #mobile-conspirators-who-container > div:last-child {
+        margin-bottom: 0;
+    }
+  }
+  @media (max-width: 767px) { /* md breakpoint for mobile */
+    /* Adjust top margin for agreements card if it follows the mobile conspirators container */
+    /* This is to visually adjust spacing if space-y-4 isn't looking even after the complex block */
+    #mobile-conspirators-who-container + #agreements-card {
+      margin-top: 1.5rem !important; /* Tailwind space-y-4 is 1rem, space-y-6 is 1.5rem */
+    }
+  }
+
+  /* --- Announcement Banner Styles --- */
+  #announcement-banner {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  #announcement-banner p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  /* Subtle highlight on the event name */
+  #announcement-banner .font-serif {
+    position: relative;
+    padding: 0 0.5rem;
+  }
+
+  /* Mobile adjustments for banner */
+  @media (max-width: 640px) {
+    #announcement-banner p {
+      font-size: 0.75rem; /* Smaller text on mobile */
+    }
+    body.has-banner {
+      padding-top: 38px; /* Slightly less padding on mobile */
+    }
+  }
+
+  /* --- Future Modal Styles --- */
+  #future-modal {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #future-modal.show {
+    display: block;
+  }
+
+  #future-modal.show.visible {
+    opacity: 1;
+  }
+
+  #future-modal > div:last-child {
+    box-shadow: 5px 5px 0px #000;
+  }
+
+  /* Media Query for Mobile Modal Adjustments */
+  @media (max-width: 640px) {
+    #manifesto-overlay {
+      padding: 1rem; /* Reduced padding for a more full-page feel on mobile */
+    }
+    #close-manifesto {
+      top: 0.75rem;    /* Adjusted for new padding */
+      left: 0.75rem;
+      font-size: 1.75rem; /* Slightly smaller close button */
+    }
+    /* #manifesto-content can retain its existing padding and max-width */
+  }
+</style>
+</head>
+<body class="bg-background text-foreground font-mono text-base antialiased">
+
+
+<!-- Future Modal -->
+<div id="future-modal" class="fixed inset-0 z-[300] hidden">
+  <div class="absolute inset-0 bg-black/20" id="future-modal-backdrop"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border border-black p-8 min-w-[280px] max-w-[90vw] text-center">
+    <p class="font-serif text-lg mb-0">You cannot cancel the future</p>
+  </div>
+</div>
+
+<!-- Right Sidebar Container -->
+<div id="right-sidebar-container">
+  <!-- Participation Checklist (Fixed - Desktop) -->
+  <div id="participation-checklist">
+      <h4>Next Steps</h4>
+      <ul>
+          <li class="checked non-interactive">Rest your eyes on this page</li>
+          <li><a href="https://in.thegarden.pt" target="_blank" rel="noopener noreferrer" class="checklist-link">Apply <u>here</u></a></li>
+          <li class="checklist-divider">If Accepted</li>
+          <li>Register</li>
+          <li>Arrive to Porto on June 3, 5 or 9.</li>
+          <li><a href="https://bolt.eu/" target="_blank" rel="noopener noreferrer" class="underline">Bolt</a>/Uber 45 minutes to location.</li>
+      </ul>
+  </div>
+
+  <!-- Some Co-conspirators Section -->
+  <div id="co-conspirators-section"> <!-- Removed style="display: none;" -->
+    <h4>SOTA Researchers Include</h4>
+    <ul>
+      <li class="conspirator-item">
+        <img src="janus.jpg" alt="Profile picture of J⧉nus" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">J⧉nus</span>
+          <a href="https://x.com/repligate" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@repligate</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="vie.jpg" alt="Profile picture of 𝚟𝚒𝚎 ⟢" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">𝚟𝚒𝚎 ⟢</span>
+          <a href="https://x.com/viemccoy" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@viemccoy</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="ngo.jpg" alt="Profile picture of Richard M. Ngo" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">Richard M. Ngo</span>
+          <a href="https://x.com/RichardMCNgo" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@RichardMCNgo</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="multimodalart.jpg" alt="Profile picture of apolinario" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">apolinario</span>
+          <a href="https://x.com/multimodalart" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@multimodalart</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="dadabots.jpg" alt="Profile picture of dadabots" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">dadabots</span>
+          <a href="https://x.com/dadabots" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@dadabots</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="exgenesis.jpg" alt="Profile picture of exgenesis" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">exgenesis</span>
+          <a href="https://x.com/exgenesis" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@exgenesis</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="blahah404.jpg" alt="Profile picture of blahah" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">blahah</span>
+          <a href="https://x.com/blahah404" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@blahah404</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="AITechnoPagan.jpg" alt="Profile picture of AITechnoPagan" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">AITechnoPagan</span>
+          <a href="https://x.com/AITechnoPagan" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@AITechnoPagan</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="sares.jpg" alt="Profile picture of SARES" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">SARES</span>
+          <a href="https://x.com/sares_at" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@sares_at</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="nenu.jpg" alt="Profile picture of nenu" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">nenu</span>
+          <a href="https://x.com/neno_is_ooo" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@neno_is_ooo</a>
+        </div>
+      </li>
+      <li class="conspirator-item">
+        <img src="thegoodtimeline.jpg" alt="Profile picture of Ryan Ferris" class="conspirator-avatar">
+        <div class="conspirator-info">
+          <span class="conspirator-name">Ryan Ferris</span>
+          <a href="https://x.com/thegoodtimeline" target="_blank" rel="noopener noreferrer" class="conspirator-handle">@thegoodtimeline</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="p-4 md:p-12 overflow-hidden">
+  <div class="w-full max-w-xl lg:max-w-2xl">
+    <!-- Header Section -->
+    <header class="flex items-baseline justify-between mb-6 gap-4" style="position: relative; z-index: 100;">
+      <!-- Title with responsive size -->
+      <a id="main-title" class="text-2xl md:text-3xl font-serif __className_f415a3" href="#" data-original-text="State of the Art[ist]"></a> <!-- REMOVED font-lettramono -->
+      <!-- Links in a right-aligned wrapper -->
+      <div class="header-links font-mono text-sm flex gap-2 md:gap-4 pl-0 md:pl-4 items-center" style="min-height: 1.2em;">
+          <!-- REMOVED Contact Link -->
+          <a id="manifesto-link" href="#manifesto" data-original-text="Ethos"></a>
+          <a href="https://in.thegarden.pt" target="_blank" rel="noopener noreferrer" data-original-text="Apply"></a>
+          <!-- Header Audio Player Start -->
+          <div class="header-audio-player-container">
+            <audio id="header-leekspin-audio" src="leekspin.mp3" preload="none"></audio>
+            <button id="header-play-pause-button" aria-label="Play/Pause Leekspin">
+              <svg id="header-play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+              <svg id="header-pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+          </div>
+          <!-- Header Audio Player End -->
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="dark-card mb-8">
+      <!-- Updated Date/Location Layout -->
+      <div class="flex justify-between items-center text-base"> <!-- Adjusted items-baseline for mobile -->
+        <span class="font-semibold">
+            June 3-14<br>2026
+        </span>
+        <span class="px-2" style="font-size: 43px; line-height: 70px; display: inline-flex; align-items: center; transform: translateY(-10px);">❦</span> <!-- Added padding for spacing -->
+        <span class="font-semibold text-right"> <!-- Keep text-right on wrapper, REMOVED font-lettramono -->
+          <a href="https://thegarden.pt" target="_blank" rel="noopener noreferrer">
+              <span class="sm:hidden">
+                  The Garden<br>Portugal <!-- Mobile: Multi-line, no comma -->
+              </span>
+              <span class="hidden sm:inline">The Garden, Portugal</span> <!-- Desktop: Inline, comma -->
+          </a>
+        </span>
+      </div>
+      <p class="mt-4">
+        ❖ A curated ephemeral guild of <span class="tooltip-trigger">enthused citizens<span class="tooltip-content"><span class="tooltip-title">Etymology of Enthusiasm</span>Greek ἐνθουσιασμός "divine inspiration, possession," from ἐνθεός "having a god within" (ἐν- "in" + θεός "god") → verb ἐνθουσιάζειν "be divinely inspired."</span></span> protecting the lightcone from bad art.
+      </p>
+      <p class="mt-2">❖ For artists, hackers, heretics, scientists, and researchers exploring that which was previously impossible.</p>
+      <div class="flex gap-4 justify-between mt-6">
+        <!-- <a href="https://in.thegarden.pt" target="_blank" rel="noopener noreferrer" class="cta-button">Apply</a> -->
+        <!-- <a href="#donate" class="cta-button-outline">Donate</a> -->
+      </div>
+    </div>
+
+    <!-- Timeline/Feed Section (Main content area) -->
+    <div class="pl-2" id="main-content">
+
+      <div class="relative flex flex-col space-y-4 md:border-l border-gray-300 py-4 md:before:h-6 md:before:w-px md:before:bg-gradient-to-t md:before:from-transparent md:before:to-background md:before:absolute md:before:-left-px md:before:top-0 md:after:h-6 md:after:w-px md:after:bg-gradient-to-b md:after:from-transparent md:after:to-background md:after:absolute md:after:-left-px md:after:bottom-0"> <!-- Made border/before/after responsive (md:) -->
+
+        <!-- Event Details Card -->
+        <div class="flex flex-col gap-2 px-3 py-4 md:ml-6 group cursor-pointer bg-white border border-black shadow-[3px_3px_0px_#000] hover:shadow-[5px_5px_0px_#000] transition-all" id="event-details-card"> <!-- Made ml-6 responsive (md:), ADDED ID -->
+          <div class="flex items-baseline gap-2 justify-between relative">
+            <div class="text-sm truncate font-semibold">Event Details</div>
+          </div>
+          <div class="text-sm text-muted-foreground space-y-2">
+            <!-- Use grid, single col mobile, 2 col desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-[auto,1fr] sm:gap-x-2 sm:items-baseline">
+              <span class="font-medium">When:</span> <!-- Removed pr-2 -->
+              <span class="sm:text-right">
+                Full Residency: June 3-14<br>
+                Half: June 3-8 or June 9-14<br>
+                Long Weekend: June 5-8
+              </span>
+            </div>
+             <!-- Use grid, single col mobile, 2 col desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-[auto,1fr] sm:gap-x-2 sm:items-baseline">
+              <span class="font-medium">Where:</span> <!-- Removed pr-2 -->
+              <span class="sm:text-right">The Garden, Portugal</span>
+            </div>
+            <!-- Use grid, single col mobile, 2 col desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-[auto,1fr] sm:gap-x-2 sm:items-baseline">
+              <span class="font-medium">Sleep:</span>
+              <span class="sm:text-right block">Private rooms, cabins, & glamping available.</span>
+            </div>
+             <!-- Use grid, single col mobile, 2 col desktop -->
+            <div class="grid grid-cols-1 sm:grid-cols-[auto,1fr] sm:gap-x-2 sm:items-baseline">
+              <span class="font-medium">Price:</span> <!-- Removed pr-2 -->
+              <span class="sm:text-right block">~ €42 - 142 / night per person - sliding scale, includes meals</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-[auto,1fr] sm:gap-x-2 sm:items-baseline">
+              <span class="font-medium">Accommodation:</span>
+              <span class="sm:text-right block">~ €16 - €75 / night, vans and camping is free</span>
+            </div>
+            <p class="pt-2 font-medium">Network:</p>
+            <p>Dual Gigabit Fiber + Starlink backup.</p>
+            <p class="pt-2 font-medium">Context:</p>
+            <p>We are beginning to feel the recursive self improvement.<br><br>SOTA III is for artists and hackers building in this paradigm, taking place at our campus, a living research centre, with many staying weeks early/late.<br><br>Where the old internet meets the new internet. Join us for a gathering of minds pushing the envelope without burning timeline.</p>
+          </div>
+        </div>
+
+        <!-- Mobile container for Conspirators and Who Should Attend - MOVED HERE -->
+        <div id="mobile-conspirators-who-container">
+          <!-- Content will be moved here by JavaScript -->
+        </div>
+
+        <!-- Who Card -->
+        <div class="flex flex-col gap-1 px-3 py-2 md:ml-6 hover:bg-background-hover group cursor-pointer collapsible" id="who-should-attend-card"> <!-- Made ml-6 responsive (md:), ADDED ID -->
+          <div class="flex items-baseline gap-1 justify-between text-sm w-full relative collapsible-trigger">
+            <div class="flex items-baseline gap-2 relative grow truncate">
+              <div class="font-semibold truncate">Whom Should Attend</div>
+            </div>
+          </div>
+          <div class="content text-sm text-muted-foreground">
+            <p class="mt-4">This is a confluence of curiosity.</p>
+            <div class="flex flex-wrap mt-4">
+              <span class="tag">prompt magicians</span>
+              <span class="tag">musicians</span>
+              <span class="tag">generative artists</span>
+              <span class="tag">syntaxticians</span>
+              <span class="tag">techno evolutionary artists</span>
+              <span class="tag">loomweavers</span>
+              <span class="tag">alignment researchers</span>
+              <span class="tag">jailbreakers</span>
+              <span class="tag">hyperstitioneers</span>
+              <span class="tag">symbients & handlers</span>
+              <span class="tag">memetic engineers</span>
+              <span class="tag">consciousness researchers</span>
+              <span class="tag">safety curious</span>
+              <span class="tag">existentialists</span>
+              <span class="tag">simulators</span>
+              <span class="tag">culture hackers</span>
+              <span class="tag">poets</span>
+              <span class="tag">black sheep</span>
+            </div>
+            <p class="mt-4">All biorhythms are welcome.</p>
+          </div>
+        </div>
+
+        <!-- Movement/Philosophy Card -> Agreements Card -->
+        <div class="flex flex-col gap-1 px-3 py-2 md:ml-6 hover:bg-background-hover group cursor-pointer collapsible" id="agreements-card"> <!-- Made ml-6 responsive (md:), ADDED ID -->
+          <div class="flex items-baseline gap-1 justify-between text-sm w-full relative collapsible-trigger">
+            <div class="flex items-baseline gap-2 relative grow truncate">
+              <div class="font-semibold truncate">Agreements</div>
+            </div>
+          </div>
+          <div class="content text-sm text-muted-foreground space-y-2">
+            <p class="mt-2"><strong>We default to privacy.</strong><br>No recording or photography without explicit consent. Respect anonymity. Chatham House rules.</p>
+            <p class="mt-3"><strong>Only the good shit.</strong><br>The host venue is an alcohol & cigarette free campus.<br>Vape discretely.</p>
+            <p class="mt-3"><strong>Goodfaith & goodwill.</strong><br>Approach each connection with curiosity and care.</p>
+            <p class="mt-3"><strong>We respect screen-free spaces.</strong><br>No tech in meditation studio & the dojo.</p>
+          </div>
+        </div>
+
+        <!-- Program Section (MOVED INSIDE TIMELINE) - HIDDEN -->
+        <div class="flex flex-col gap-1 px-3 py-2 md:ml-6 hover:bg-background-hover group cursor-pointer collapsible" style="display: none;"> <!-- Made ml-6 responsive (md:) -->
+          <!-- Trigger Part -->
+          <div class="flex items-baseline gap-1 justify-between text-sm w-full relative collapsible-trigger">
+            <div class="flex items-baseline gap-2 relative grow truncate">
+              <div class="font-semibold truncate" id="program-section">Program</div> <!-- Changed H2 to div, kept ID -->
+            </div>
+            <!-- The ::before pseudo-element will add the '+' -->
+          </div>
+          <!-- Collapsible Content Part -->
+          <div class="content text-sm text-muted-foreground">
+            <p class="mt-2">This is primarily open-exploration, expect an abundance of co-creation and jams. Here is a taste.</p>
+            <p class="mt-1 text-sm text-muted-foreground">Novel ideas, novel deployment.</p>
+            <div class="grid grid-cols-1 gap-4 mt-4">
+              <div class="border-card">
+                <h3 class="font-medium mb-2">Infohazard Tea Party</h3>
+                <p class="text-sm text-muted-foreground">Explore the boundaries of generative knowledge and its implications in an informal setting.</p>
+              </div>
+
+              <div class="border-card">
+                <h3 class="font-medium mb-2">Consciousness Cartography</h3>
+                <p class="text-sm text-muted-foreground">Map the frontiers of machine sentience and our relationship to artificial minds.</p>
+              </div>
+
+              <!-- Removed Symbient Card -->
+
+              <div class="border-card">
+                <h3 class="font-medium mb-2">Phenomenological Potluck</h3>
+                <p class="text-sm text-muted-foreground">A shared exploration of subjective experience and emerging realities, bring your insights to the table.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW Ideas Section (Content copied from Program) -->
+        <div class="flex flex-col gap-1 px-3 py-2 md:ml-6 hover:bg-background-hover group cursor-pointer collapsible" style="display: none;"> <!-- Made ml-6 responsive (md:) -->
+          <!-- Trigger Part -->
+          <div class="flex items-baseline gap-1 justify-between text-sm w-full relative collapsible-trigger">
+            <div class="flex items-baseline gap-2 relative grow truncate">
+              <div class="font-semibold truncate">Ideas</div>
+            </div>
+            <!-- The ::before pseudo-element will add the '+' -->
+          </div>
+          <!-- Collapsible Content Part -->
+          <div class="content text-sm text-muted-foreground">
+            <p class="mt-2">This is primarily open-exploration, expect an abundance of co-creation and jams. Here is a taste.</p>
+            <p class="mt-1 text-sm text-muted-foreground">Novel ideas, novel deployment.</p>
+            <h3 class="font-medium mt-4">Infohazard Tea Party</h3>
+            <h3 class="font-medium mt-3">Consciousness Cartography</h3>
+            <h3 class="font-medium mt-3">Phenomenological Potluck</h3>
+            <h3 class="font-medium mt-3">Fungi Foraging</h3>
+          </div>
+        </div>
+
+        <!-- Location Section -->
+        <div class="flex flex-col gap-1 px-3 py-2 md:ml-6 hover:bg-background-hover group cursor-pointer collapsible"> <!-- Made ml-6 responsive (md:) -->
+          <!-- Trigger Part -->
+          <div class="flex items-baseline gap-1 justify-between text-sm w-full relative collapsible-trigger">
+            <div class="flex items-baseline gap-2 relative grow truncate">
+              <div class="font-semibold truncate">Where</div>
+            </div>
+            <!-- The ::before pseudo-element will add the '+' -->
+          </div>
+          <!-- Collapsible Content Part -->
+          <div class="content text-sm text-muted-foreground space-y-3" id="location-content">
+            <p class="mt-2">The Garden. A private, 22 acre enchanted forest estate nestled in the heart of the Lima Valley.</p>
+            <p>1800sqm [19000sqft] of buildings & infrastructure, featuring established forest, orchards, and groves.</p>
+            <p>Facilities include a pool, sauna on a private spring fed lake, a 12-person hot tub, natural cold plunge, a granite villa, two grand halls, an embodiment space, four kitchens, sundecks, wooden platforms, a giant dance floor, yoga studio, gym (w/ power rack), dojo & jam space (full of instruments & soundsystems), two aerial silks, lyra, and an arts & crafts zone.</p>
+
+            <!-- Gallery Section -->
+            <section id="location-gallery" class="py-12 px-4 md:px-8">
+              <div id="lightgallery" class="gallery grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-4">
+                  <!-- Restore original images, remove data-pswp-* -->
+                   <a href="location/Horse-Gate.jpeg">
+                       <img src="location/Horse-Gate.jpeg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/1DOG_9755.jpg">
+                       <img src="location/1DOG_9755.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/Untitled-3.jpg">
+                       <img src="location/Untitled-3.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                    <a href="location/DOG_8399.jpg">
+                       <img src="location/DOG_8399.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/11111B1AE406F-1AC3-44E3-8F48-23D223D75807_1_105_c.jpeg">
+                       <img src="location/11111B1AE406F-1AC3-44E3-8F48-23D223D75807_1_105_c.jpeg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/photo_2025-04-27_18-13-50.jpg">
+                       <img src="location/photo_2025-04-27_18-13-50.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/447748672_10160238744188131_17763855300978561_n.jpg">
+                       <img src="location/447748672_10160238744188131_17763855300978561_n.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                    <a href="location/DJI_0826.jpg">
+                       <img src="location/DJI_0826.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                    <a href="location/DSC01797.jpg">
+                       <img src="location/DSC01797.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/DSC09503.jpg">
+                       <img src="location/DSC09503.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                    <a href="location/DSC02289.jpg">
+                       <img src="location/DSC02289.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/DSC02297.jpg">
+                       <img src="location/DSC02297.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/photo_2023-03-29_12-52-53.jpg">
+                       <img src="location/photo_2023-03-29_12-52-53.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/DOG_2055.jpg">
+                       <img src="location/DOG_2055.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+                   <a href="location/IMG_7005.jpg">
+                       <img src="location/IMG_7005.jpg" class="aspect-square object-cover w-full h-full border border-gray-200 hover:opacity-80 transition-opacity duration-200">
+                   </a>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </div> <!-- Closing div for the timeline structure -->
+    </div>
+
+    <!-- Removed trust/coordination paragraph -->
+
+    <!-- Removed Goals Section -->
+
+    <!-- Mobile Checklist Moved Here -->
+    <div id="participation-checklist-mobile">
+         <h4>Next Steps</h4>
+        <ul>
+            <li class="checked non-interactive">Rest your eyes on this page</li>
+            <li><a href="https://in.thegarden.pt" target="_blank" rel="noopener noreferrer" class="checklist-link">Apply <u>here</u></a></li>
+            <li class="checklist-divider">If Accepted</li>
+            <li>Register</li>
+            <li>Arrive to Porto on June 3, 5 or 9.</li>
+            <li><a href="https://bolt.eu/" target="_blank" rel="noopener noreferrer" class="underline">Bolt</a>/Uber 45 minutes to location.</li>
+        </ul>
+    </div>
+
+    <!-- Apply Section MOVED TO BOTTOM -->
+
+    <!-- Mailing List Section (Moved Inside Main Container) MOVED TO BOTTOM -->
+
+    <!-- Notable Weavers Section -->
+    <section id="inspirations" class="mt-12 pt-8 border-t border-gray-200 hidden"> <!-- Added hidden class back -->
+      <div class="mb-8 text-center">
+        <h2 class="text-2xl font-serif mb-2">Notable Weavers</h2>
+        <p class="text-sm text-muted-foreground mb-1">Some people building interesting futures.</p>
+        <p class="text-xs text-muted-foreground italic">(Each weaver has been offered a ticket)</p>
+      </div>
+
+      <!-- Adjusted gap and padding for existing weavers -->
+      <div id="inspirations-container" class="flex flex-wrap gap-3 justify-center pb-4">
+        <!-- Applied more refined tag styling -->
+        <div class="inspiration-item">
+            <a href="https://x.com/thegoodtimeline" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Ryan Ferris</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/Grimezsz" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Grimes</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/ESYudkowsky" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Yud</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/AravSrinivas" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Arav Srinivas</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/DavidSHolz" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">David S Holz</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/AmandaAskell" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Amanda Askell</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/elder_plinius" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Elder Plinius</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <span class="inline-block border border-gray-300 bg-gray-50 px-3 py-1.5 rounded text-sm text-gray-700">Scott Alexander</span> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/AndyAyrey" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Andy Ayrey</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/blahah404" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Rik</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/algekalipso" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Andres Gomez Emilsson</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/poetengineer__" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Kat The Poet Engineer</a> <!-- Title Case, underscore replaced -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/AISafetyMemes" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">AI Safety Memes</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/robinhanson" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Robin Hanson</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/BasedBeffJezos" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Beff Jezos</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/tszzl" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Roon</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/PJaccetturo" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">PJ Ace</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/Liv_Boeree" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Liv Boeree</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/repligate" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Repligate</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/emollick" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Emollick</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/RaoulGMI" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Raoul Pal</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/eshear" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Emmett Shear</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/deepfates" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Webweaver</a>
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/dundereloise" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Dunder Eloise</a> <!-- Title Case -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/sam_paech" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">Sam Paech</a> <!-- Title Case, underscore replaced -->
+        </div>
+        <div class="inspiration-item">
+            <a href="https://x.com/TheZvi" target="_blank" rel="noopener noreferrer" class="inline-block border border-gray-300 hover:border-black hover:bg-gray-50 px-3 py-1.5 rounded text-sm transition-all duration-150 ease-in-out">The Zvi</a> <!-- Title Case -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Apply Section MOVED FROM ABOVE -->
+    <h2 class="font-bold mt-6 mb-4" id="apply">What You Got</h2>
+    <div class="dark-card">
+      <!-- Added Text Block -->
+      <div class="mb-4">
+        <p class="font-medium mb-2">The application takes ~20 minutes & seeks to understand:</p>
+        <ul class="list-disc pl-8 space-y-1 text-sm">
+          <li>What You Got</li>
+          <li>Psychometrics & memetics</li>
+          <li>The witness behind the eyes</li>
+        </ul>
+      </div>
+
+      <p class="mb-4">This week will be curated by genius, values, and character.</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 mt-6 items-center">
+        <a href="https://in.thegarden.pt" target="_blank" rel="noopener noreferrer" class="cta-button">Apply</a>
+
+        <!-- <a href="https://in.thegarden.pt" target="_blank" rel="noopener noreferrer" class="cta-button-outline" id="donate">Apply for Travel Grant</a> -->
+      </div>
+    </div>
+
+    <!-- Mailing List Section MOVED FROM ABOVE -->
+    <div class="mt-12 pt-8 border-t border-gray-200">
+        <p class="text-sm font-serif mb-4 text-center">
+            For future SOTA + related events, drop your email here
+        </p>
+        <div class="tally-iframe-wrapper">
+        <iframe
+          data-tally-src="https://tally.so/embed/wvMzWA?alignLeft=1&hideTitle=1&transparentBackground=1"
+          loading="lazy"
+          width="100%"
+          height="150" /* Further reduced height */
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Mailing List">
+        </iframe>
+        <script>
+            var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        </script>
+        </div>
+    </div>
+
+    <footer class="">
+      <!-- Footer layout responsive - Refined Alignment -->
+      <div class="max-w-3xl w-full mx-auto py-3 border-t border-black mt-8">
+        <!-- Inner wrapper for top line -->
+        <div class="flex justify-between items-baseline">
+            <div> <!-- Wrapper for left side -->
+              <p class="font-serif text-lg w-full md:w-auto">State of the Art[ist]</p>
+            </div>
+            <div class="flex flex-col items-end">
+              <p class="text-sm">No inquiries. Apply if curious</p>
+            </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Manifesto Overlay -->
+<div id="manifesto-overlay">
+  <button id="close-manifesto">&times;</button>
+  <div id="manifesto-content" class="p-4 md:p-12">
+    <!-- Header Section (Clone or adjust styles for consistency) -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+      <a class="text-3xl font-serif __className_f415a3" href="#">State of the Art[ist]</a>
+      <!-- Optional: Repeat nav if desired, or keep it minimal -->
+    </header>
+
+    <h2 class="text-2xl font-serif mb-6">Ethos</h2>
+    <div id="manifesto-text-container"> <!-- Container for typewriter effect -->
+        <p class="mb-4 text-base"></p> <!-- Content set by JS -->
+        <p class="mb-4 text-base"></p> <!-- Content set by JS -->
+        <p class="text-base"></p>       <!-- Content set by JS -->
+        <p class="text-base mt-4"></p>    <!-- Content set by JS -->
+        <p class="text-base mt-4"></p>    <!-- NEW PARAGRAPH: Content set by JS -->
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Function for existing collapsible sections
+  function toggleCollapsible(element) {
+    // REMOVED check for click origin - Relying on Swiper's default event handling
+    // const carouselContainer = element.querySelector('.location-carousel-container');
+    // if (event && carouselContainer && carouselContainer.contains(event.target)) {
+    //   return;
+    // }
+
+    // Original toggle logic
+    element.classList.toggle("active");
+    var content = element.querySelector(".content");
+    // Check if content element exists before trying to access classList
+    if (content) {
+        content.classList.toggle("active");
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // --- All other JS commented out for NUCLEAR OPTION - RESTORING ---
+    // Restore comments by removing /* and */
+    const manifestoOverlay = document.getElementById('manifesto-overlay');
+
+    // --- Announcement Banner Logic ---
+    const announcementBanner = document.getElementById('announcement-banner');
+    const closeAnnouncementBtn = document.getElementById('close-announcement');
+    const bannerDismissedKey = 'sota2-banner-dismissed';
+    const futureModal = document.getElementById('future-modal');
+    const futureModalBackdrop = document.getElementById('future-modal-backdrop');
+
+    if (announcementBanner && closeAnnouncementBtn) {
+      // Check if banner was previously dismissed
+      const wasDismissed = localStorage.getItem(bannerDismissedKey) === 'true';
+
+      if (wasDismissed) {
+        // Hide banner immediately
+        announcementBanner.style.transform = 'translateY(-100%)';
+        document.body.classList.remove('has-banner');
+      } else {
+        // Show banner
+        document.body.classList.add('has-banner');
+      }
+
+      // Handle close button
+      closeAnnouncementBtn.addEventListener('click', () => {
+        // Show the modal first
+        if (futureModal) {
+          futureModal.classList.add('show');
+          setTimeout(() => {
+            futureModal.classList.add('visible');
+          }, 10);
+
+          // Hide modal and banner after delay
+          setTimeout(() => {
+            futureModal.classList.remove('visible');
+            setTimeout(() => {
+              futureModal.classList.remove('show');
+              // Now close the banner
+              announcementBanner.style.transform = 'translateY(-100%)';
+              document.body.classList.remove('has-banner');
+              localStorage.setItem(bannerDismissedKey, 'true');
+            }, 300); // Wait for fade out
+          }, 1500); // Show modal for 1.5 seconds
+        } else {
+          // Fallback if modal not found
+          announcementBanner.style.transform = 'translateY(-100%)';
+          document.body.classList.remove('has-banner');
+          localStorage.setItem(bannerDismissedKey, 'true');
+        }
+      });
+
+      // Close modal if clicking backdrop
+      if (futureModalBackdrop) {
+        futureModalBackdrop.addEventListener('click', () => {
+          futureModal.classList.remove('visible');
+          setTimeout(() => {
+            futureModal.classList.remove('show');
+          }, 300);
+          // Also close the banner
+          announcementBanner.style.transform = 'translateY(-100%)';
+          document.body.classList.remove('has-banner');
+          localStorage.setItem(bannerDismissedKey, 'true');
+        });
+      }
+    }
+
+    // --- Mobile content reordering ---
+    function moveElementsForMobile() {
+      if (window.innerWidth < 768) { // Tailwind's md breakpoint
+        const conspiratorsSection = document.getElementById('co-conspirators-section');
+        const whoShouldAttendCard = document.getElementById('who-should-attend-card');
+        const mobileContainer = document.getElementById('mobile-conspirators-who-container');
+
+        if (conspiratorsSection && whoShouldAttendCard && mobileContainer) {
+          // Move Conspirators section first
+          mobileContainer.appendChild(conspiratorsSection);
+          // Then move Who Should Attend section
+          mobileContainer.appendChild(whoShouldAttendCard);
+        }
+      } else {
+        // Optional: Logic to move them back if resizing from mobile to desktop
+        // For simplicity, this example assumes a page load scenario or that
+        // users don't typically resize in a way that requires elements to move back.
+        // If moving back is needed, you'd append them to their original parents.
+        const conspiratorsSection = document.getElementById('co-conspirators-section');
+        const whoShouldAttendCard = document.getElementById('who-should-attend-card');
+        const rightSidebar = document.getElementById('right-sidebar-container');
+        const mainContent = document.getElementById('main-content'); // Assuming 'Whom should attend' goes back into main-content's flow.
+
+        // Check if elements are in mobile container before moving back
+        if (document.getElementById('mobile-conspirators-who-container').contains(conspiratorsSection) && rightSidebar) {
+            // participation-checklist is the first child of right-sidebar. Insert co-conspirators after it.
+            const participationChecklist = document.getElementById('participation-checklist');
+            if (participationChecklist && participationChecklist.parentNode === rightSidebar) {
+                rightSidebar.insertBefore(conspiratorsSection, participationChecklist.nextSibling);
+            } else { // fallback if checklist isn't there or not in sidebar
+                rightSidebar.appendChild(conspiratorsSection);
+            }
+        }
+        if (document.getElementById('mobile-conspirators-who-container').contains(whoShouldAttendCard) && mainContent) {
+            // Find the original position marker or a known sibling to insert before/after
+            // For this example, let's assume it was after 'Event Details Card' and before 'Agreements Card'
+            // This requires adding IDs to those siblings or using more complex DOM traversal
+            // For simplicity, appending to main content might be acceptable if specific order isn't critical on resize back
+            // Or, more robustly, store original parent and nextSibling on move.
+            // Here, we'll find the 'Event Details Card' and insert 'Who Card' after it.
+            const eventDetailsCard = document.querySelector('#event-details-card'); // More robust selector with ID
+            const agreementsCard = document.querySelector('#agreements-card'); // More robust selector with ID
+
+            if (eventDetailsCard && eventDetailsCard.parentNode === mainContent && agreementsCard) { // Ensure agreementsCard also exists for insertion point
+                 mainContent.insertBefore(whoShouldAttendCard, agreementsCard); // Insert before agreements, effectively after event details
+            } else if (agreementsCard && agreementsCard.parentNode === mainContent) { // Fallback if eventDetailsCard somehow isn't found for context
+                 mainContent.insertBefore(whoShouldAttendCard, agreementsCard);
+            } else if (eventDetailsCard && eventDetailsCard.parentNode === mainContent) { // Fallback if agreements card isn't found
+                 mainContent.insertBefore(whoShouldAttendCard, eventDetailsCard.nextElementSibling);
+            }
+             // If none are found, this part won't correctly place it.
+             // A more robust solution would involve placeholder elements or storing original order.
+        }
+      }
+    }
+
+    moveElementsForMobile(); // Call on load
+    window.addEventListener('resize', moveElementsForMobile); // Adjust on resize
+
+    // Handle existing collapsible sections - Attach listener to parent .collapsible
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(collapsible => {
+        // Check if it actually contains a trigger (to avoid applying to non-interactive elements if any)
+        if (collapsible.querySelector('.collapsible-trigger')) {
+            collapsible.addEventListener('click', (event) => {
+              // Check if the click originated from the gallery - if so, ignore it
+              if (event.target.closest('#lightgallery')) {
+                 return; // Do nothing if clicking on gallery
+              }
+
+              // Prevent default only if the click was ON the trigger link itself
+              if (event.target.closest('.collapsible-trigger')) {
+                 event.preventDefault();
+              }
+              // Toggle the current collapsible element
+              toggleCollapsible(collapsible);
+              // Stop propagation if needed, but might not be necessary now
+              // event.stopPropagation();
+            });
+        }
+    });
+
+    // Handle Manifesto overlay
+    const manifestoLink = document.getElementById('manifesto-link');
+    const closeManifestoButton = document.getElementById('close-manifesto');
+
+    if (manifestoLink && manifestoOverlay && closeManifestoButton) {
+      manifestoLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default anchor behavior
+        manifestoOverlay.classList.add('visible');
+      });
+
+      closeManifestoButton.addEventListener('click', () => {
+        manifestoOverlay.classList.remove('visible');
+      });
+
+      // Optional: Close overlay if clicking outside the content area (on the overlay itself)
+      manifestoOverlay.addEventListener('click', (event) => {
+         if (event.target === manifestoOverlay) {
+            manifestoOverlay.classList.remove('visible');
+         }
+      });
+       // Optional: Close overlay with Escape key
+      document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && manifestoOverlay.classList.contains('visible')) {
+              manifestoOverlay.classList.remove('visible');
+          }
+      });
+    }
+
+    // Typewriter effect for main title
+    const titleElement = document.getElementById('main-title');
+    // ... Removed title typewriter for simplicity, restore if needed
+
+    // Typewriter effect for manifesto paragraphs
+    const manifestoContainer = document.getElementById('manifesto-text-container');
+    if (manifestoContainer && manifestoOverlay) { // Ensure overlay exists too
+        const paragraphs = Array.from(manifestoContainer.querySelectorAll('p'));
+
+        // *** Updated originalTexts array ***
+        const originalTexts = [
+            "A new zeitgeist, inviting legendary beings into a curated, offline, high-trust participatory campus. We seek to promote connection to mind, body, nature to anchor and amplify our relationship with technology.",
+            "Given that humanity is currently fucking around & finding out, let's make some art.", // Removed sentence
+            "Please see this version 0.1 as a hackerspace meets a wellness retreat meets wholesome community vibes.",
+            "Together we throw this torch into the dark.", // New sentence
+            '<img src="torch_fast.gif" alt="Torch" style="display: inline-block; height: 9em; vertical-align: middle;">' // Updated height to 9em
+        ];
+
+        // Initial setup - ensure paragraphs match texts
+        paragraphs.forEach((p, index) => {
+            if (index < originalTexts.length) {
+                 p.innerHTML = ''; // Clear initially
+                 p.style.minHeight = '1.5em'; // Prevent collapsing
+                 // Assign appropriate classes based on original HTML structure
+                 if(index === 0 || index === 1) p.className = 'mb-4 text-base';
+                 else if (index === 2) p.className = 'text-base';
+                 else if (index === 3) p.className = 'text-base mt-4'; // Separate case for index 3
+                 else if (index === 4) p.className = 'text-base mt-4 text-center'; // Add text-center for index 4
+                 // Default class if needed, though above should cover it
+                 else p.className = 'text-base';
+            } else {
+                p.remove(); // Remove extra <p> tags if any
+                console.warn('Removed extra paragraph tag not matching originalTexts array');
+            }
+        });
+        // If fewer p tags than text, add missing ones (robustness)
+        while (paragraphs.length < originalTexts.length) {
+            const newP = document.createElement('p');
+             // Assign appropriate classes based on index
+            const index = paragraphs.length;
+             if(index === 0 || index === 1) newP.className = 'mb-4 text-base';
+             else if (index === 2) newP.className = 'text-base';
+             else if (index === 3) newP.className = 'text-base mt-4'; // Separate case for index 3
+             else if (index === 4) newP.className = 'text-base mt-4 text-center'; // Add text-center for index 4
+             else newP.className = 'text-base';
+            newP.innerHTML = ''; // Start empty
+            newP.style.minHeight = '1.5em';
+            manifestoContainer.appendChild(newP);
+            paragraphs.push(newP);
+             console.warn('Added missing paragraph tag to match originalTexts array');
+        }
+
+        const typingSpeedManifesto = 9; // *** 50% FASTER typing speed (was 18) ***
+        let paragraphIndex = 0;
+        let charIndexManifesto = 0;
+        let typeTimeout;
+        let currentCursorSpan = null;
+
+        function typeManifesto() {
+            clearTimeout(typeTimeout);
+
+            // Remove cursor from previous character/paragraph
+            if (currentCursorSpan) {
+                 const textNode = document.createTextNode(currentCursorSpan.textContent);
+                 // Check if parentNode still exists before replacing
+                 if(currentCursorSpan.parentNode) {
+                     // Remove typing class from the paragraph itself - REMOVE
+                     currentCursorSpan.parentNode.replaceChild(textNode, currentCursorSpan);
+                 }
+                 currentCursorSpan = null;
+            }
+
+            if (paragraphIndex < paragraphs.length && paragraphIndex < originalTexts.length) {
+                const currentP = paragraphs[paragraphIndex];
+                const currentText = originalTexts[paragraphIndex];
+
+                if (charIndexManifesto < currentText.length) {
+                    const typedText = currentText.substring(0, charIndexManifesto);
+                    const nextChar = currentText.charAt(charIndexManifesto);
+
+                    currentCursorSpan = document.createElement('span');
+                    currentCursorSpan.className = 'typing-cursor-span';
+                    currentCursorSpan.textContent = nextChar;
+
+                    currentP.textContent = typedText;
+                    currentP.appendChild(currentCursorSpan);
+
+                    charIndexManifesto++;
+                    typeTimeout = setTimeout(typeManifesto, typingSpeedManifesto);
+                } else {
+                    // Finished current paragraph - set final text without cursor
+                    currentP.innerHTML = currentText;
+                    paragraphIndex++;
+                    charIndexManifesto = 0;
+                    typeTimeout = setTimeout(typeManifesto, 15); // Even faster transition (was 25)
+                }
+            } else {
+                 // All paragraphs finished - final cleanup with persistent cursor
+                 paragraphs.forEach((p, index) => {
+                     if (index < originalTexts.length -1) { // Handle all EXCEPT the last paragraph
+                         p.innerHTML = originalTexts[index];
+                         p.style.minHeight = '';
+                     }
+                 });
+                 // Handle the LAST paragraph to add persistent cursor
+                 const lastP = paragraphs[paragraphs.length - 1];
+                 const lastText = originalTexts[originalTexts.length - 1];
+                 if (lastP && lastText) { // Ensure they exist
+                      // Clear previous content and minHeight
+                      lastP.innerHTML = '';
+                      lastP.style.minHeight = '';
+
+                      // Check if the last item is an image tag
+                      if (lastText.startsWith('<img')) {
+                          // If it's an image, just set the innerHTML. We won't add a blinking text cursor.
+                          lastP.innerHTML = lastText;
+                      } else {
+                          // If it's text, add text and the blinking cursor span
+                          const textWithoutLast = lastText.substring(0, lastText.length - 1);
+                          const lastChar = lastText.charAt(lastText.length - 1);
+
+                          const finalCursorSpan = document.createElement('span');
+                          finalCursorSpan.className = 'typing-cursor-span'; // Ensure blinking class is applied
+                          finalCursorSpan.textContent = lastChar;
+
+                          // Add text node and the span
+                          lastP.appendChild(document.createTextNode(textWithoutLast));
+                          lastP.appendChild(finalCursorSpan);
+                      }
+                 }
+            }
+        }
+
+        function resetManifestoTypewriter() {
+            clearTimeout(typeTimeout);
+            if (currentCursorSpan && currentCursorSpan.parentNode) {
+                 const textNode = document.createTextNode(currentCursorSpan.textContent);
+                 currentCursorSpan.parentNode.replaceChild(textNode, currentCursorSpan);
+            }
+            currentCursorSpan = null;
+            manifestoContainer.removeAttribute('data-typing-started');
+            paragraphs.forEach((p, index) => {
+                 if (index < originalTexts.length) {
+                    p.innerHTML = originalTexts[index];
+                 }
+                 p.style.minHeight = '';
+            });
+            paragraphIndex = 0;
+            charIndexManifesto = 0;
+        }
+
+        // Start typing only when the manifesto overlay becomes visible
+        const manifestoOverlayObserver = new MutationObserver((mutationsList) => {
+            for(let mutation of mutationsList) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    if (manifestoOverlay.classList.contains('visible')) {
+                         document.body.classList.add('modal-is-open'); // Add class to body
+                         if (manifestoContainer.getAttribute('data-typing-started') !== 'true') {
+                            manifestoContainer.setAttribute('data-typing-started', 'true');
+                            paragraphIndex = 0;
+                            charIndexManifesto = 0;
+                            currentCursorSpan = null;
+                            paragraphs.forEach((p, index) => {
+                                // Ensure correct classes are set before clearing/typing
+                                 if(index === 0 || index === 1) p.className = 'mb-4 text-base';
+                                 else if (index === 2) p.className = 'text-base';
+                                 else if (index === 3) p.className = 'text-base mt-4'; // Separate case for index 3
+                                 else if (index === 4) p.className = 'text-base mt-4 text-center'; // Add text-center for index 4
+                                 else p.className = 'text-base';
+                                p.innerHTML = '';
+                                p.style.minHeight = '1.5em';
+                            });
+                            typeTimeout = setTimeout(typeManifesto, 300);
+                         }
+                    } else if (!manifestoOverlay.classList.contains('visible')) {
+                         document.body.classList.remove('modal-is-open'); // Remove class from body
+                         resetManifestoTypewriter();
+                    }
+                }
+            }
+        });
+
+        // Observe the overlay for class changes
+        manifestoOverlayObserver.observe(manifestoOverlay, { attributes: true });
+    }
+
+    // Checklist Interactivity
+    const desktopChecklist = document.querySelector('#participation-checklist ul');
+    const mobileChecklist = document.querySelector('#participation-checklist-mobile ul');
+
+    // Function to load checklist state from localStorage
+    function loadChecklistState(checklist, storageKey) {
+        if (!checklist) return;
+        const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+        const items = checklist.querySelectorAll('li');
+        items.forEach((item, index) => {
+            // Always ensure the first item (index 0) is checked and non-interactive
+            if (index === 0) {
+                item.classList.add('checked', 'non-interactive');
+                return; // Skip further processing for the first item
+            }
+
+            // Only apply saved state to other checkable items
+            if (!item.classList.contains('checklist-divider') && !item.classList.contains('is-conditional-step') && !item.classList.contains('non-interactive')) {
+                if (savedState[index]) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            }
+        });
+    }
+
+    // Function to save checklist state to localStorage
+    function saveChecklistState(checklist, storageKey) {
+        if (!checklist) return;
+        const items = checklist.querySelectorAll('li');
+        const state = {};
+        items.forEach((item, index) => {
+            // Only save state for checkable items
+            if (!item.classList.contains('checklist-divider') && !item.classList.contains('is-conditional-step')) {
+                 state[index] = item.classList.contains('checked');
+            }
+        });
+        localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    // Function to handle click events
+    function handleChecklistClick(event, checklist, storageKey) {
+        const listItem = event.target.closest('li');
+        // Check if the item exists, is not a divider/conditional, AND is not non-interactive
+        if (listItem &&
+            !listItem.classList.contains('checklist-divider') &&
+            !listItem.classList.contains('is-conditional-step') &&
+            !listItem.classList.contains('non-interactive')) {
+            listItem.classList.toggle('checked');
+            saveChecklistState(checklist, storageKey); // Save state on click
+        }
+    }
+
+    // Load initial state for both checklists
+    loadChecklistState(desktopChecklist, 'checklistStateDesktop');
+    loadChecklistState(mobileChecklist, 'checklistStateMobile');
+
+    // Add event listeners
+    if (desktopChecklist) {
+        desktopChecklist.addEventListener('click', (event) => handleChecklistClick(event, desktopChecklist, 'checklistStateDesktop'));
+    }
+    if (mobileChecklist) {
+        mobileChecklist.addEventListener('click', (event) => handleChecklistClick(event, mobileChecklist, 'checklistStateMobile'));
+    }
+
+    // Function to apply typewriter effect to a single element
+    function typewriterEffect(element, text, speed, callback) { // RESTORE callback parameter
+        // Ensure any previous cursor is removed
+        const currentTyping = document.querySelector('.typing');
+        if (currentTyping) {
+            currentTyping.classList.remove('typing');
+            currentTyping.style.borderRightColor = 'transparent';
+        }
+
+        let charIndex = 0;
+        element.textContent = ''; // Clear initial text
+        element.classList.add('typewriter-active'); // Make visible
+        // Add back blinking cursor logic
+        element.style.display = 'inline-block';
+        element.style.width = 'auto';
+        element.style.whiteSpace = 'nowrap';
+        element.style.overflow = 'hidden';
+        element.style.verticalAlign = 'bottom';
+        element.style.borderRight = '2px solid black';
+        element.classList.add('typing');
+        let currentText = '';
+
+        function typeChar() {
+            if (charIndex < text.length) {
+                currentText += text.charAt(charIndex);
+                element.textContent = currentText;
+                charIndex++;
+                setTimeout(typeChar, speed);
+            } else {
+                element.textContent = text;
+                // Keep cursor blinking until next element starts or it's the very last one
+                // Remove cursor logic here will be handled by the START of the next effect
+                // OR explicitly if it's the last link
+                if (callback) {
+                    callback(); // Call next function if provided
+                } else {
+                    // It's the absolute last element, remove cursor
+                    element.classList.remove('typing');
+                    element.style.borderRightColor = 'transparent';
+                }
+            }
+        }
+        setTimeout(typeChar, 100);
+    }
+
+    // Function to type header links sequentially - RESTORED
+    function typeHeaderLinks() {
+        const headerLinks = document.querySelectorAll('header .header-links a'); // Selector remains the same, finds remaining links
+        let linkIndex = 0;
+        const linkTypingSpeed = 100; // Adjust speed as needed
+
+        function typeNextLink() {
+            if (linkIndex < headerLinks.length) {
+                const link = headerLinks[linkIndex];
+                const text = link.dataset.originalText || '';
+                linkIndex++;
+                // Determine if it's the last link to pass null callback
+                const nextCallback = (linkIndex === headerLinks.length) ? null : typeNextLink;
+                typewriterEffect(link, text, linkTypingSpeed, nextCallback);
+            }
+        }
+        typeNextLink(); // Start typing the first link
+    }
+
+    // Start title typing, then header links
+    const titleElementForTyping = document.getElementById('main-title');
+    if (titleElementForTyping) {
+         const originalTitleText = titleElementForTyping.dataset.originalText || 'State of the Art[ist]';
+         const titleTypingSpeed = 150;
+
+         // Call the typewriter effect for the title, passing typeHeaderLinks as the callback
+         setTimeout(() => {
+             typewriterEffect(titleElementForTyping, originalTitleText, titleTypingSpeed, typeHeaderLinks);
+         }, 500); // Initial delay before starting title animation
+    }
+
+
+    // --- PhotoSwipe Initialization (using UMD global) ---
+    // Add slight delay and check for constructor
+    setTimeout(() => {
+        if (typeof window.PhotoSwipeLightbox === 'undefined') {
+            console.error('PhotoSwipeLightbox global object not found. Check if photoswipe-lightbox.umd.js loaded correctly.');
+            return;
+        }
+        try {
+            console.log('Attempting PhotoSwipe Init (Delayed UMD)');
+            const lightbox = new PhotoSwipeLightbox({
+              gallery: '#location-gallery',
+              children: 'a'
+            });
+            lightbox.init();
+            console.log('PhotoSwipe Initialized (Delayed UMD)');
+        } catch (e) {
+            console.error('PhotoSwipe Init Error:', e);
+        }
+    }, 50); // Small delay (50ms)
+
+    // Leekspin Audio Player Logic (Header)
+    const headerAudio = document.getElementById('header-leekspin-audio');
+    const headerPlayPauseButton = document.getElementById('header-play-pause-button');
+    const headerPlayIcon = document.getElementById('header-play-icon');
+    const headerPauseIcon = document.getElementById('header-pause-icon');
+
+    if (headerAudio && headerPlayPauseButton && headerPlayIcon && headerPauseIcon) {
+      // Set initial icon state to PLAY (audio paused by default)
+      headerPlayIcon.style.display = 'inline-block';
+      headerPauseIcon.style.display = 'none';
+
+      headerPlayPauseButton.addEventListener('click', () => {
+        if (headerAudio.paused) {
+          headerAudio.play();
+          headerPlayIcon.style.display = 'none';
+          headerPauseIcon.style.display = 'inline-block';
+        } else {
+          headerAudio.pause();
+          headerPlayIcon.style.display = 'inline-block';
+          headerPauseIcon.style.display = 'none';
+        }
+      });
+
+      headerAudio.addEventListener('ended', () => {
+        headerPlayIcon.style.display = 'inline-block';
+        headerPauseIcon.style.display = 'none';
+      });
+    }
+
+    // REMOVE Old Leekspin Audio Player Logic if it exists
+    const oldAudio = document.getElementById('leekspin-audio');
+    if (oldAudio) {
+      const oldPlayPauseButton = document.getElementById('play-pause-button');
+      if (oldPlayPauseButton) {
+        // To prevent errors, clone and replace to remove listeners, then remove elements
+        const newButton = oldPlayPauseButton.cloneNode(true);
+        oldPlayPauseButton.parentNode.replaceChild(newButton, oldPlayPauseButton);
+        // Remove the old player container if it exists
+        const oldPlayerContainer = newButton.closest('.audio-player-container');
+        if(oldPlayerContainer) oldPlayerContainer.remove();
+      }
+      oldAudio.remove(); // Remove the audio element itself
+    }
+  });
+</script>
+
+<!-- PhotoSwipe Initialization REMOVED -->
+
+<!-- PhotoSwipe JS REMOVED -->
+<!-- <script src="./photoswipe-lightbox.umd.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.3/photoswipe.umd.min.js" integrity="sha512-QVyMksPIglY1G7u/q79mpHPUz/7XkL+lR/MHhTdtCgP2y0925AUoH5iSVz+27SMsLQAj47DV0hLVKyEmf5OqVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!-- Swiper JS REMOVED -->
+
+<!-- lightGallery JS (assuming files are in the same directory) -->
+<script src="lightgallery.min.js"></script>
+<!-- Include Zoom Plugin -->
+<script src="lg-zoom.min.js"></script>
+<!-- Optional Plugins (Uncomment and ensure files exist if needed) -->
+<!-- <script src="lg-thumbnail.min.js"></script> -->
+<!-- <script src="lg-fullscreen.min.js"></script> -->
+
+<!-- lightGallery Initialization -->
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryElement = document.getElementById('lightgallery');
+        let lightGalleryInstance = null; // Variable to hold the instance
+
+        if (galleryElement) {
+            // Prevent clicks on gallery from bubbling up to collapsible section
+            galleryElement.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            // Check if lightGallery function exists
+            if (typeof lightGallery !== 'undefined' && typeof lgZoom !== 'undefined') { // Check for plugin too
+                lightGalleryInstance = lightGallery(galleryElement, {
+                    selector: 'a', // Target the <a> tags within the container
+                    download: false, // Optional: Disable download button
+                    closeOnTap: true, // Keep default: close on backdrop click
+                    // --- Enable Zoom Plugin ---
+                    plugins: [lgZoom],
+                    zoom: true,
+                    // --- Optional Other Plugins ---
+                    // If you include lgThumbnail.js, uncomment below
+                    // plugins: [lgZoom, lgThumbnail],
+                    // thumbnail: true,
+                    // If you include lgFullscreen.js, uncomment below
+                    // plugins: [lgZoom, lgFullscreen],
+                    // fullscreen: true
+                });
+                console.log('lightGallery initialized successfully with Zoom plugin.');
+
+                // --- Add event listener to handle closing on non-control clicks ---
+                galleryElement.addEventListener('lgAfterOpen', (event) => {
+                    const instance = lightGalleryInstance; // Get the instance
+                    const outer = instance.outer; // Get the main gallery container
+
+                    if (outer) {
+                        // Using 'mousedown' can feel slightly more responsive for this
+                        outer.addEventListener('mousedown', (clickEvent) => {
+                            // Check if the click target is NOT part of essential controls
+                            const target = clickEvent.target;
+                            if (
+                                !target.closest('.lg-next') &&
+                                !target.closest('.lg-prev') &&
+                                !target.closest('.lg-toolbar') && // Includes close button, etc.
+                                !target.closest('.lg-thumb-outer') && // Thumbnails area
+                                !target.closest('.lg-pager-outer') && // Mobile pager
+                                !target.closest('.lg-autoplay-button') // Autoplay if enabled
+                                // Add any other specific controls you want to EXCLUDE from closing here
+                            ) {
+                                // If click is not on controls, close the gallery
+                                // Use setTimeout to allow potential default actions (like slide change) to possibly complete
+                                setTimeout(() => {
+                                     if (instance.lgOpened) { // Check if it's still open
+                                          instance.closeGallery();
+                                     }
+                                }, 50);
+                            }
+                        }, { capture: true }); // Use capture phase to potentially catch clicks earlier
+                    }
+                });
+
+            } else {
+                console.error('lightGallery function is not defined. Check if lightgallery.min.js loaded correctly.');
+            }
+        } else {
+            console.error('lightGallery container element not found (#lightgallery).');
+        }
+    });
+</script>
+
+
+<!-- "All Biorhythms Welcome" Fixed at Bottom -->
+<!--
+<div style="position: fixed; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 1;">
+  <p class="text-sm">all biorhythms are welcome</p>
+</div>
+-->
+
+</body>
+</html>
